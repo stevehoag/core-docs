@@ -37,7 +37,7 @@ The full metadata block is above (in the [raw Markdown](https://raw.githubuserco
 - Colons in a value (for example, a title) break the metadata parser. In this case, surround the title with double quotes (for example, `title: "Writing .NET Core console apps: An advanced step-by-step guide"`).
 - **title**: This title will appear in search engine results. You can also add a pipe (|) followed by the product name (for example, `title: Developing Libraries with Cross Platform Tools | .NET Core`). The title doesn't need be identical to the title in your H1 heading and it should contain 65 characters or less (including | PRODUCT NAME).
 - **author**, **manager**, **ms.reviewer**: The author field should contain the **GitHub username** of the author, not their alias.  The "manager" and "ms.reviewer" fields, on the other hand, should contain Microsoft aliases. ms.reviewer specifies the name of the PM/dev associated with the article or feature.
-- **ms.devlang** defines the technology. Some of the supported values are: dotnet, cpp, csharp, fsharp, xml, vb and xml.
+- **ms.devlang** defines the technology. Some of the supported values are: dotnet, cpp, csharp, fsharp, vb and xml.
 - **ms.assetid**: This is the GUID of the article that is used for internal tracking purposes such as Business Intelligence (BI). When creating a new Markdown file, get a GUID from [https://www.guidgenerator.com](https://www.guidgenerator.com). 
 
 ## Basic Markdown, GFM, and special characters
@@ -135,6 +135,10 @@ You can use one of the following syntax:
 For more information about using this notation, see [Using cross reference](https://dotnet.github.io/docfx/tutorial/links_and_cross_references.html#using-cross-reference).
 
 > Right now, there is no easy way to find the UIDs. The best way to find the UID for an API is to search for it in this repo: [docascode/coreapi](https://github.com/docascode/coreapi). We're working on having a better system in the future.
+
+When the UID contains the special characters \` or \#, the UID value needs to be HTML encoded as %60 and %23 respectively as in the following examples:
+- Example: @System.Threading.Tasks.Task\`1 becomes `@System.Threading.Tasks.Task%601`
+- Example: @System.Exception.\#ctor becomes `@System.Exception.%23ctor`
 
 ## Lists
 
