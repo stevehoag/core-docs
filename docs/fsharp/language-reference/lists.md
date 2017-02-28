@@ -2,12 +2,13 @@
 title: Lists (F#)
 description: Lists (F#)
 keywords: visual f#, f#, functional programming
-author: dend
-manager: danielfe
+author: cartermp
+ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: visual-studio-dev14
+ms.prod: .net
 ms.technology: devlang-fsharp
+ms.devlang: fsharp
 ms.assetid: a1a6075f-064d-4aee-8222-2b59ff16cc12 
 ---
 
@@ -36,19 +37,13 @@ You can also define list elements by using a range indicated by integers separat
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet1302.fs)]
 
-You can also define a list by using a looping construct, as in the following code.
-
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet1303.fs)]
-
 An empty list is specified by a pair of square brackets with nothing in between them.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet1304.fs)]
 
-You can also use a sequence expression to create a list. See "Sequence Expressions" in [Sequences](https://msdn.microsoft.com/library/6b773b6b-9c9a-4af8-bd9e-d96585c166db). For example, the following code creates a list of squares of integers from 1 to 10.
+You can also use a sequence expression to create a list. See [Sequence Expressions](sequences.md#sequence-expressions) for more information. For example, the following code creates a list of squares of integers from 1 to 10.
 
-```fsharp
-let squaresList = [ for i in 1 .. 10 -> i * i ]
-```
+[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet1303.fs)]
 
 ## Operators for Working with Lists
 You can attach elements to a list by using the `::` (cons) operator. If `list1` is `[2; 3; 4]`, the following code creates `list2` as `[100; 2; 3; 4]`.
@@ -437,7 +432,7 @@ The `List` module provides functions for converting to and from both sequences a
 
 
 ### Additional Operations
-For information about additional operations on lists, see the library reference topic [Collections.List Module](https://msdn.microsoft.com/en-us/visualfsharpdocs/conceptual/collections.list-module-%5bfsharp%5d).
+For information about additional operations on lists, see the library reference topic [Collections.List Module](https://msdn.microsoft.com/visualfsharpdocs/conceptual/collections.list-module-%5bfsharp%5d).
 
 
 ## See Also

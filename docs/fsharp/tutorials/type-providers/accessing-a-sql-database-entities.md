@@ -1,13 +1,14 @@
 ---
-title: Walkthrough - Accessing a SQL Database by Using Type Providers and Entities (F#)
-description: Walkthrough - Accessing a SQL Database by Using Type Providers and Entities (F#)
+title: "Walkthrough: Accessing a SQL Database by Using Type Providers and Entities (F#)"
+description: "Walkthrough: Accessing a SQL Database by Using Type Providers and Entities (F#)"
 keywords: visual f#, f#, functional programming
-author: dend
-manager: danielfe
+author: cartermp
+ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: visual-studio-dev14
+ms.prod: .net
 ms.technology: devlang-fsharp
+ms.devlang: fsharp
 ms.assetid: dc82a932-5401-4d19-9fb3-92c50d8db514 
 ---
 
@@ -183,17 +184,17 @@ let fullContext = context.DataContext
 let nullable value = new System.Nullable<_>(value)
 
 let addInstructor(lastName, firstName, hireDate, office) =
-let hireDate = DateTime.Parse(hireDate)
-let newPerson = new EntityConnection.ServiceTypes.Person(LastName = lastName,
-                                                         FirstName = firstName,
-                                                         HireDate = nullable hireDate)
-fullContext.AddObject("People", newPerson)
+  let hireDate = DateTime.Parse(hireDate)
+  let newPerson = new EntityConnection.ServiceTypes.Person(LastName = lastName,
+                                                           FirstName = firstName,
+                                                           HireDate = nullable hireDate)
+  fullContext.AddObject("People", newPerson)
 
-let newOffice = new EntityConnection.ServiceTypes.OfficeAssignment(Location = office)
+  let newOffice = new EntityConnection.ServiceTypes.OfficeAssignment(Location = office)
 
-fullContext.AddObject("OfficeAssignments", newOffice)
-fullContext.CommandTimeout <- nullable 1000
-fullContext.SaveChanges() |> printfn "Saved changes: %d object(s) modified."
+  fullContext.AddObject("OfficeAssignments", newOffice)
+  fullContext.CommandTimeout <- nullable 1000
+  fullContext.SaveChanges() |> printfn "Saved changes: %d object(s) modified."
 
 addInstructor("Parker", "Darren", "1/1/1998", "41/3720")
 ```
@@ -206,22 +207,22 @@ Nothing is changed in the database until you call `System.Data.Objects.ObjectCon
 
 ```fsharp
 let deleteInstructor(lastName, firstName) =
-query {
-  for person in context.People do
-  where (person.FirstName = firstName &&
-  person.LastName = lastName)
-  select person
-} |> Seq.iter (fun person->
-                  query {
-                    for officeAssignment in context.OfficeAssignments do
-                    where (officeAssignment.Person.PersonID = person.PersonID)
-                    select officeAssignment
-                  } |> Seq.iter (fun officeAssignment -> fullContext.DeleteObject(officeAssignment))
+  query {
+    for person in context.People do
+    where (person.FirstName = firstName &&
+           person.LastName = lastName)
+    select person
+  } |> Seq.iter (fun person->
+                    query {
+                      for officeAssignment in context.OfficeAssignments do
+                      where (officeAssignment.Person.PersonID = person.PersonID)
+                      select officeAssignment
+                    } |> Seq.iter (fun officeAssignment -> fullContext.DeleteObject(officeAssignment))
 
-fullContext.DeleteObject(person))
+                    fullContext.DeleteObject(person))
 
-// The call to SaveChanges should be outside of any iteration on the queries.
-fullContext.SaveChanges() |> printfn "Saved changed: %d object(s) modified."
+  // The call to SaveChanges should be outside of any iteration on the queries.
+  fullContext.SaveChanges() |> printfn "Saved changed: %d object(s) modified."
 
 deleteInstructor("Parker", "Darren")
 ```
@@ -237,7 +238,7 @@ Explore other query options by reviewing the query operators available in [Query
 ## See Also
 [Type Providers](index.md)
 
-[SqlEntityConnection Type Provider](https://msdn.microsoft.com/en-us/visualfsharpdocs/conceptual/sqlentityconnection-type-provider-%5bfsharp%5d)
+[SqlEntityConnection Type Provider](https://msdn.microsoft.com/visualfsharpdocs/conceptual/sqlentityconnection-type-provider-%5bfsharp%5d)
 
 [Walkthrough: Generating F# Types from an EDMX Schema File](generating-fsharp-types-from-edmx.md)
 

@@ -2,12 +2,13 @@
 title: Type Extensions (F#)
 description: Type Extensions (F#)
 keywords: visual f#, f#, functional programming
-author: dend
-manager: danielfe
+author: cartermp
+ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: visual-studio-dev14
+ms.prod: .net
 ms.technology: devlang-fsharp
+ms.devlang: fsharp
 ms.assetid: c9d7ce27-f5ad-4766-b9e9-34187da5bc24 
 ---
 
@@ -70,7 +71,9 @@ static member Method<T>(this T input, T other)
 This approach is particularly useful when the generic type parameter is constrained. Further, you can now declare extension members like this in F# code and define an additional, semantically rich set of extension methods. In F#, you usually define extension members as the following example shows:
 
 ```fsharp
-type seq<’T> with
+open System.Collections.Generic
+
+type IEnumerable<'T> with
     /// Repeat each element of the sequence n times
     member xs.RepeatElements(n: int) =
         seq { for x in xs do for i in 1 .. n do yield x }
@@ -84,7 +87,7 @@ Consider the following declaration:
 [<Extension>]
 type ExtraCSharpStyleExtensionMethodsInFSharp () =
     [<Extension>]
-    static member inline Sum(xs: seq<’T>) = Seq.sum xs
+    static member inline Sum(xs: IEnumerable<'T>) = Seq.sum xs
 ```
 
 By using this declaration, you can write code that resembles the following sample.

@@ -3,11 +3,11 @@ title: Handling and throwing exceptions in .NET
 description: Understand how to use exceptions in .NET
 keywords: .NET, .NET Core
 author: mairaw
-manager: wpickett
+ms.author: mairaw
 ms.date: 06/20/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.prod: .net
+ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: bf116df6-0042-46bf-be13-b69864816210
 ---
@@ -74,7 +74,7 @@ The following table lists some common exceptions with examples of what can cause
 | @System.InvalidOperationException | @System.Exception | Thrown by methods when in an invalid state. | Calling `Enumerator.GetNext()` after removing an Item from the underlying collection. |
 | @System.ArgumentException | @System.Exception | Base class for all argument exceptions. | None (use a derived class of this exception). |
 | @System.ArgumentNullException | @System.Exception | Thrown by methods that do not allow an argument to be null. | `String s = null; "Calculate".IndexOf (s);` |
-| @System.ArgumentOutOfRangeException | @System.Exception | Thrown by methods that verify that arguments are in a given range. | `String s = "string"; s.Chars[9];` |
+| @System.ArgumentOutOfRangeException | @System.Exception | Thrown by methods that verify that arguments are in a given range. | `String s = "string"; s.Substring(s.Length+1);` |
 
 ## How to use the try/catch block to catch exceptions
 

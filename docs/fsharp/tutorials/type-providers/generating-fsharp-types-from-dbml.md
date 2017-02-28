@@ -1,13 +1,14 @@
 ---
-title: Walkthrough - Generating F# Types from a DBML File (F#)
-description: Walkthrough - Generating F# Types from a DBML File (F#)
+title: "Walkthrough: Generating F# Types from a DBML File (F#)"
+description: "Walkthrough: Generating F# Types from a DBML File (F#)"
 keywords: visual f#, f#, functional programming
-author: dend
-manager: danielfe
+author: cartermp
+ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: visual-studio-dev14
+ms.prod: .net
 ms.technology: devlang-fsharp
+ms.devlang: fsharp
 ms.assetid: 6fbb6ccc-248f-4226-95e9-f6f99541dbe4 
 ---
 
@@ -19,7 +20,7 @@ This guide was written for F# 3.0 and will be updated.  See [FSharp.Data](http:/
 > [!NOTE]
 The API reference links will take you to MSDN.  The docs.microsoft.com API reference is not complete.
 
-This walkthrough for F# 3.0 describes how to create types for data from a database when you have schema information encoded in a .dbml file. LINQ to SQL uses this file format to represent database schema. You can generate a LINQ to SQL schema file in Visual Studio by using the Object Relational (O/R) Designer. For more information, see [O/R Designer Overview](https://msdn.microsoft.com/library/bb384511.aspx) and [Code Generation in LINQ to SQL](Code-Generation-in-https://msdn.microsoft.com/library/bb386976).
+This walkthrough for F# 3.0 describes how to create types for data from a database when you have schema information encoded in a .dbml file. LINQ to SQL uses this file format to represent database schema. You can generate a LINQ to SQL schema file in Visual Studio by using the Object Relational (O/R) Designer. For more information, see [O/R Designer Overview](https://msdn.microsoft.com/library/bb384511.aspx) and [Code Generation in LINQ to SQL](https://msdn.microsoft.com/library/bb386976).
 
 The Database Markup Language (DBML) type provider allows you to write code that uses types based on a database schema without requiring you to specify a static connection string at compile time. That can be useful if you need to allow for the possibility that the final application will use a different database, different credentials, or a different connection string than the one you use to develop the application. If you have a direct database connection that you can use at compile time and this is the same database and credentials that you will eventually use in your built application, you can also use the SQLDataConnection type provider. For more information, see [Walkthrough: Accessing a SQL Database by Using Type Providers](accessing-a-sql-database.md).
 
@@ -107,7 +108,7 @@ In this section, you create a type provider and generate types from the schema t
 open Microsoft.FSharp.Data.TypeProviders
 
 
-type dbml = DbmlFile<"MyDatabase.dbml", ResolutionFolder = @"<path-to-folder-that-contains-.dbml-file>>
+type dbml = DbmlFile<"MyDatabase.dbml", ResolutionFolder = @"<path-to-folder-that-contains-.dbml-file>">
 
 // This connection string can be specified at run time.
 let connectionString = "Data Source=MYSERVER\INSTANCE;Initial Catalog=MyDatabase;Integrated Security=SSPI;"
@@ -150,7 +151,7 @@ You can proceed to use other query expressions, or get a database connection fro
 
 
 ## See Also
-[DbmlFile Type Provider](https://msdn.microsoft.com/en-us/visualfsharpdocs/conceptual/dbmlfile-type-provider-%5bfsharp%5d)
+[DbmlFile Type Provider](https://msdn.microsoft.com/visualfsharpdocs/conceptual/dbmlfile-type-provider-%5bfsharp%5d)
 
 [Type Providers](index.md)
 
