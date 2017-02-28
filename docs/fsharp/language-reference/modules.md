@@ -2,12 +2,13 @@
 title: Modules (F#)
 description: Modules (F#)
 keywords: visual f#, f#, functional programming
-author: dend
-manager: danielfe
+author: cartermp
+ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: visual-studio-dev14
+ms.prod: .net
 ms.technology: devlang-fsharp
+ms.devlang: fsharp
 ms.assetid: 46de2d18-da51-40fa-a262-92edecada79d
 ---
 
@@ -19,7 +20,8 @@ In the context of the F# language, a *module* is a grouping of F# code, such as 
 
 ```fsharp
 // Top-level module declaration.
-module [accessibility-modifier] [qualified-namespace.]module-namedeclarations
+module [accessibility-modifier] [qualified-namespace.]module-name
+declarations
 // Local module declaration.
 module [accessibility-modifier] module-name =
     declarations

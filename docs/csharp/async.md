@@ -3,12 +3,12 @@ title: Asynchronous programming
 description: Asynchronous programming
 keywords: .NET, .NET Core
 author: cartermp
-manager: wpickett
+ms.author: wiwagn
 ms.date: 06/20/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
-ms.devlang: dotnet
+ms.prod: .net
+ms.technology: devlang-csharp
+ms.devlang: csharp
 ms.assetid: b878c34c-a78f-419e-a594-a2b44fa521a4
 ---
 
@@ -16,7 +16,7 @@ ms.assetid: b878c34c-a78f-419e-a594-a2b44fa521a4
 
 If you have any I/O-bound needs (such as requesting data from a network or accessing a database), you'll want to utilize asynchronous programming.  You could also have CPU-bound code, such as performing an expensive calculation, which is also a good scenario for writing async code.
 
-C# has a language-level asynchronous programming model which allows for easily writing asynchronous code without having to juggle callbacks or conform to a library which supports asynchrony. It follows what is known as the [Task-based Asynchronous Pattern (TAP)](https://msdn.microsoft.com/en-us/library/hh873175%28v=vs.110%29.aspx).
+C# has a language-level asynchronous programming model which allows for easily writing asynchronous code without having to juggle callbacks or conform to a library which supports asynchrony. It follows what is known as the [Task-based Asynchronous Pattern (TAP)](https://msdn.microsoft.com/library/hh873175.aspx).
 
 ## Basic Overview of the Asynchronous Model
 
@@ -121,7 +121,8 @@ The following examples demonstrate various ways you can write async code in C#. 
 
 This snippet downloads the HTML from www.dotnetfoundation.org and counts the number of times the string ".NET" occurs in the HTML.  It uses ASP.NET MVC to define a web controller method which performs this task, returning the number.
 
-*Note: you shouldn't ever use regular expressions if you plan on doing actual HTML parsing.  Please using a parsing library if this is your aim in production code.*
+> [!NOTE]
+> You shouldn't ever use regular expressions if you plan on doing actual HTML parsing.  Please using a parsing library if this is your aim in production code.
 
 ```csharp
 private readonly HttpClient _httpClient = new HttpClient();

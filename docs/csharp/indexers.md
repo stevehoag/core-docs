@@ -3,12 +3,12 @@ title: Indexers
 description: Indexers
 keywords: .NET, .NET Core
 author: BillWagner
-manager: wpickett
+ms.author: wiwagn
 ms.date: 06/20/2016
 ms.topic: article
-ms.prod: .net-core
-ms.technology: .net-core-technologies
-ms.devlang: dotnet
+ms.prod: .net
+ms.technology: devlang-csharp
+ms.devlang: csharp
 ms.assetid: 0e9496da-e766-45a9-b92b-91820d4a350e
 ---
 
@@ -76,7 +76,7 @@ Let's walk through some of the common scenarios for using *indexers*.
 The code for all the samples is available at the core-docs [GitHub
 repository](https://github.com/dotnet/core-docs). Or, you can
 access the 
-[sample folder](https://github.com/dotnet/core-docs/tree/master/samples/csharp/indexers)
+[sample folder](https://github.com/dotnet/docs/tree/master/samples/csharp/indexers)
 directly.
 
 ### Arrays and Vectors

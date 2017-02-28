@@ -1,18 +1,22 @@
 ---
-title: Using .NET Core SDK and tools in Continuous Integration (CI)
+title: Using .NET Core SDK and tools in Continuous Integration (CI) | Microsoft Docs
 description: Using .NET Core SDK and tools in Continuous Integration (CI)
 keywords: .NET, .NET Core
-author: mairaw
-manager: wpickett
+author: blackdwarf
+ms.author: mairaw
 ms.date: 06/20/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 5fb15297-a276-417f-8c4f-267281357769
 ---
 
 # Using .NET Core SDK and tools in Continuous Integration (CI)
+
+> [!WARNING]
+> This topic applies to .NET Core Tools Preview 2. For the .NET Core Tools RC4 version,
+> see the [Using .NET Core SDK and tools in Continuous Integration (CI) (.NET Core Tools RC4)](../preview3/tools/using-ci-with-cli.md) topic.
 
 ## Overview
 This document outlines the usage of .NET Core SDK and its tools on the build server. In general, on a CI build server, 
@@ -64,12 +68,22 @@ in the [CLI repo](https://github.com/dotnet/core/blob/master/Documentation/prere
 The below sections show examples of configurations using the mentioned CI SaaS offerings. 
 
 ### TravisCI
-**TODO**
+
+The [travis-ci](https://travis-ci.org/) can be configured to install the .NET Core SDK using the `csharp` language and the `dotnet` key.
+
+Just use:
+
+```yaml
+dotnet: 1.0.0-preview2-003121
+```
+
+Travis can run both `osx` (OS X 10.11) and `linux` ( Ubuntu 14.04 ) job in a build matrix, see [example .travis.yml](https://github.com/dotnet/docs/blob/master/.travis.yml) 
+for more information.
 
 ### AppVeyor
 
-The [appveyor.com ci](https://www.appveyor.com/) has .NET Core SDK preview1 already installed 
-in the build worker image `Visual Studio 2015`
+The [appveyor.com ci](https://www.appveyor.com/) has .NET Core SDK preview2 already installed 
+in the build worker image `Visual Studio 2015`.
 
 Just use:
 
@@ -77,7 +91,7 @@ Just use:
 os: Visual Studio 2015
 ```
 
-It's possible to install a specific version of .NET Core SDK, see [example appveyor.yml](https://github.com/dotnet/core-docs/blob/master/appveyor.yml) 
+It's possible to install a specific version of .NET Core SDK, see [example appveyor.yml](https://github.com/dotnet/docs/blob/master/appveyor.yml) 
 for more info. 
 
 In the example, the .NET Core SDK binaries are downloaded, unzipped in a subdirectory and added to `PATH` env var.

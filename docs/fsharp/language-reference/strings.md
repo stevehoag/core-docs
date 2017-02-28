@@ -2,12 +2,13 @@
 title: Strings (F#)
 description: Strings (F#)
 keywords: visual f#, f#, functional programming
-author: dend
-manager: danielfe
+author: cartermp
+ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: visual-studio-dev14
+ms.prod: .net
 ms.technology: devlang-fsharp
+ms.devlang: fsharp
 ms.assetid: df7624e5-ca6c-4e77-9e2b-87ca7e5e6f52 
 ---
 
@@ -84,7 +85,7 @@ By using the `Chars` property of `System.String`, you can access the individual 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet1005.fs)]
     
 ## String Module
-Additional functionality for string handling is included in the `String` module in the `FSharp.Core` namespace. For more information, see [Core.String Module](https://msdn.microsoft.com/en-us/visualfsharpdocs/conceptual/core.string-module-%5bfsharp%5d).
+Additional functionality for string handling is included in the `String` module in the `FSharp.Core` namespace. For more information, see [Core.String Module](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.string-module-%5bfsharp%5d).
 
 ## See Also
 [F# Language Reference](index.md)

@@ -2,12 +2,13 @@
 title: Functions (F#)
 description: Functions (F#)
 keywords: visual f#, f#, functional programming
-author: dend
-manager: danielfe
+author: cartermp
+ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: visual-studio-dev14
+ms.prod: .net
 ms.technology: devlang-fsharp
+ms.devlang: fsharp
 ms.assetid: 6dea2c3e-2f9d-4c9d-97a2-d8f9a72b6f4c 
 ---
 
@@ -22,9 +23,9 @@ You define functions by using the `let` keyword, or, if the function is recursiv
 
 ```fsharp
 // Non-recursive function definition.
-let [inline] function-nameparameter-list [ : return-type ] = function-body
+let [inline] function-name parameter-list [ : return-type ] = function-body
 // Recursive function definition.
-let rec function-nameparameter-list = recursive-function-body
+let rec function-name parameter-list = recursive-function-body
 ```
 
 ## Remarks
@@ -38,7 +39,7 @@ let f x = x + 1
 
 In the previous example, the function name is `f`, the argument is `x`, which has type `int`, the function body is `x + 1`, and the return value is of type `int`.
 
-The inline specifier is a hint to the compiler that the function is small and that the code for the function can be integrated into the body of the caller.
+Functions can be marked `inline`. For information about `inline`, see [Inline Functions](../functions/inline-functions.md).
 
 
 ## Scope

@@ -1,13 +1,13 @@
----
+﻿---
 title: Microservices hosted in Docker | C#
 description: Learn to create asp.net core services that run in Docker containers
 keywords: .NET, .NET Core, Docker, C#, ASP.NET, Microservice
 author: BillWagner
-manager: wpickett
+ms.author: wiwagn
 ms.date: 08/12/2016
 ms.topic: article
 ms.prod: .net-core
-ms.technology: .net-core-technologies
+ms.technology: dotnet-docker
 ms.devlang: csharp
 ms.assetid: 87e93838-a363-4813-b859-7356023d98ed
 ---
@@ -32,7 +32,7 @@ Along the way, you'll also see some C# language features:
 * How to process incoming HTTP Requests and generate the HTTP Response
 * How to work with nullable value types
 
-You can retrieve the code from our [GitHub repository.](https://github.com/dotnet/core-docs/tree/master/samples/csharp/getting-started/WeatherMicroservice)
+You can retrieve the code from our [GitHub repository.](https://github.com/dotnet/docs/tree/master/samples/csharp/getting-started/WeatherMicroservice)
 
 ### Why Docker?
 
@@ -61,15 +61,16 @@ for instructions for your platform.
 Docker can be installed in many Linux distributions, macOS, or Windows. The page
 referenced above contains sections to each of the available installations.
 
-You'll also need to install a number of command line tools that support
+Most components to be installed are done by a package manager. If you have node.js's package manager `npm` installed you can skip this step. 
+Otherwise install the latest NodeJs from [nodejs.org](https://nodejs.org) which will install the npm package manager. 
+
+At this point you will need to install a number of command line tools that support
 ASP.NET core development. The command line templates use Yeoman, Bower,
-Grunt, and Gulp. You may already have many of these tools, but if not,
-run the following command in your favorite shell:
+Grunt, and Gulp. If you have them installed that is good, otherwise type the following into your favorite shell:
 
 `npm install -g yo bower grunt-cli gulp`
 
-This instructs the node package manager (npm) to install the needed tools.
-The '-g' option indicates that it is a global install, and those tools are
+The `-g` option indicates that it is a global install, and those tools are
 available system wide. (A local install scopes the package to a single
 project). Once you've installed those core tools, you need to install
 the yeoman asp.net template generators:
@@ -106,18 +107,24 @@ for .NET development. Each verb executes a different command
 
 The first step is to restore all the dependencies:
 
-`dotnet restore`
+```console
+dotnet restore
+```
 
 Dotnet restore uses the NuGet package manager to install all the necessary packages
 into the application directory. It also generates a project.json.lock file. This
 file contains information about each package that is referenced. After restoring
 all the dependencies, you build the application:
 
-`dotnet build`
+```console
+dotnet build
+```
 
 And once you build the application, you run it from the command line:
 
-`dotnet run`
+```console
+dotnet run
+```
 
 The default configuration listens to http://localhost:5000. You can open a
 browser and navigate to that page and see a "Hello World!" message.
@@ -314,7 +321,7 @@ into a JSON packet, and send that back to the client. Let's start by creating
 the JSON packet. You'll add the NewtonSoft JSON Serializer to the
 list of dependencies:
 
-```
+```json
   "dependencies": {
     "Microsoft.NETCore.App": {
       "version": "1.0.0",
@@ -408,7 +415,7 @@ informs Docker  what command and command line options start the service.
 Let's build an image and run the service inside a Docker container. You build the image
 using the docker build command. Run the following command from the directory containing your code.
 
-```
+```console
 docker build -t weather-microservice .
 ```
 
@@ -418,7 +425,7 @@ tag used for the Docker container is `weather-microservice`. When this command c
 you have a container ready to run your new service. Run the following command to start
 the container and launch your service:
 
-```
+```console
 docker run -d -p 80:5000 --name hello-docker weather-microservice
 ```
 
@@ -432,7 +439,7 @@ container.
 
 You can see if the image is running by checking the command:
 
-```
+```console
 docker ps
 ```
 
@@ -453,7 +460,7 @@ for each request. You don't see that information when your container is running 
 mode. The Docker attach command enables you to attach to a running container so that you
 can see the log information.  Run this command from a command window:
 
-```
+```console
 docker attach --sig-proxy=false hello-docker
 ```
 
@@ -472,20 +479,20 @@ Press `Ctrl-C` to stop the attach process.
 
 When you are done working with your container, you can stop it:
 
-```
+```console
 docker stop hello-docker
 ```
 
 The container and image is still available for you to restart.  If you want to remove
 the container from your machine, you use this command:
 
-```
+```console
 docker rm hello-docker
 ```
 
 If you want to remove unused images from your machine, you use this command:
 
-```
+```console
 docker rmi hello-docker
 ```
 

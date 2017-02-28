@@ -2,12 +2,13 @@
 title: Reference Cells (F#)
 description: Reference Cells (F#)
 keywords: visual f#, f#, functional programming
-author: dend
-manager: danielfe
+author: cartermp
+ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: visual-studio-dev14
+ms.prod: .net
 ms.technology: devlang-fsharp
+ms.devlang: fsharp
 ms.assetid: 09a0b221-ea21-45c4-bae8-5e4a339750c4
 ---
 
@@ -56,10 +57,10 @@ The following table shows the features that are available on the reference cell.
 
 |Operator, member, or field|Description|Type|Definition|
 |--------------------------|-----------|----|----------|
-|`!` (dereference operator)|Returns the underlying value.|`'a ref -&gt; 'a`|`let (!) r = r.contents`|
-|`:=` (assignment operator)|Changes the underlying value.|`'a ref -&gt; 'a -&gt; unit`|`let (:=) r x = r.contents &lt;- x`|
-|`ref` (operator)|Encapsulates a value into a new reference cell.|`'a -&gt; 'a ref`|`let ref x = { contents = x }`|
-|`Value` (property)|Gets or sets the underlying value.|`unit -&gt; 'a`|`member x.Value = x.contents`|
+|`!` (dereference operator)|Returns the underlying value.|`'a ref -> 'a`|`let (!) r = r.contents`|
+|`:=` (assignment operator)|Changes the underlying value.|`'a ref -> 'a -> unit`|`let (:=) r x = r.contents <- x`|
+|`ref` (operator)|Encapsulates a value into a new reference cell.|`'a -> 'a ref`|`let ref x = { contents = x }`|
+|`Value` (property)|Gets or sets the underlying value.|`unit -> 'a`|`member x.Value = x.contents`|
 |`contents` (record field)|Gets or sets the underlying value.|`'a`|`let ref x = { contents = x }`|
 There are several ways to access the underlying value. The value returned by the dereference operator (`!`) is not an assignable value. Therefore, if you are modifying the underlying value, you must use the assignment operator (`:=`) instead.
 

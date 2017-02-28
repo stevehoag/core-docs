@@ -2,12 +2,13 @@
 title: Events (F#)
 description: Events (F#)
 keywords: visual f#, f#, functional programming
-author: dend
-manager: danielfe
+author: cartermp
+ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: visual-studio-dev14
+ms.prod: .net
 ms.technology: devlang-fsharp
+ms.devlang: fsharp
 ms.assetid: 28b588f2-0c9e-4c0d-babf-901ed934638a 
 ---
 
@@ -181,8 +182,8 @@ Application.Run(appForm)
 
 [Lambda Expressions: The `fun` Keyword](../functions/lambda-expressions-the-fun-keyword.md)
 
-[Control.Event Module](https://msdn.microsoft.com/en-us/visualfsharpdocs/conceptual/control.event-module-%5bfsharp%5d)
+[Control.Event Module](https://msdn.microsoft.com/visualfsharpdocs/conceptual/control.event-module-%5bfsharp%5d)
 
-[Control.Event&#60;'T&#62; Class](https://msdn.microsoft.com/en-us/visualfsharpdocs/conceptual/control.event%5b%27t%5d-class-%5bfsharp%5d)
+[Control.Event&#60;'T&#62; Class](https://msdn.microsoft.com/visualfsharpdocs/conceptual/control.event%5b%27t%5d-class-%5bfsharp%5d)
 
-[Control.Event&#60;'Delegate,'Args&#62; Class](https://msdn.microsoft.com/en-us/visualfsharpdocs/conceptual/control.event%5b%27delegate%2c%27args%5d-class-%5bfsharp%5d)
+[Control.Event&#60;'Delegate,'Args&#62; Class](https://msdn.microsoft.com/visualfsharpdocs/conceptual/control.event%5b%27delegate%2c%27args%5d-class-%5bfsharp%5d)

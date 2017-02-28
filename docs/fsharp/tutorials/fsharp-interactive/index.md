@@ -2,16 +2,17 @@
 title: F# Interactive (fsi.exe) Reference
 description: F# Interactive (fsi.exe) Reference
 keywords: visual f#, f#, functional programming
-author: dend
-manager: danielfe
+author: cartermp
+ms.author: phcart
 ms.date: 05/16/2016
 ms.topic: language-reference
-ms.prod: visual-studio-dev14
+ms.prod: .net
 ms.technology: devlang-fsharp
+ms.devlang: fsharp
 ms.assetid: 36af8d1b-dc08-4a37-9497-d23c0a0ac11c 
 ---
 
-## Interactive Programming with F# #
+# Interactive Programming with F# #
 
 > [!NOTE]
 This article currently describes the experience for Windows only.  It will be rewritten.
@@ -94,4 +95,4 @@ test
 |Title|Description|
 |-----|-----------|
 |[F# Interactive Options](fsharp-interactive-options.md)|Describes command line syntax and options for the F# Interactive, fsi.exe.|
-|[F# Interactive Library Reference](https://msdn.microsoft.com/en-us/visualfsharpdocs/conceptual/fsharp-interactive-library-reference)|Describes library functionality available when executing code in F# interactive.|
+|[F# Interactive Library Reference](https://msdn.microsoft.com/visualfsharpdocs/conceptual/fsharp-interactive-library-reference)|Describes library functionality available when executing code in F# interactive.|
